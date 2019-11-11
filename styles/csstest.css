@@ -1,0 +1,31 @@
+/*
+Brandon Watkins
+September 6, 2019
+INFO 2220
+Jon Holmes
+This is my CSS pertaining to my csstest.html assignment.
+*/
+
+/* likely going to toss this after this assignment, making excluesively for my css test page, part 3. */
+#testbody a:hover{
+    color:#888888;
+}
+#testbody td:hover{
+    background-color:#000000;
+    color:#ffffff;
+    cursor:cell;
+}
+#testbody .success p:before, .warning p:before, .error p:before {
+    content: "Message: ";
+}
+#testbody .special {
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: overline;
+}
+#testbody .special:before {
+    content: '"';
+}
+#testbody .special:after {
+    content: '"';
+}

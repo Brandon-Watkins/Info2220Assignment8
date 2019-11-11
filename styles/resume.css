@@ -1,0 +1,135 @@
+/*
+Brandon Watkins
+September 6, 2019
+INFO 2220
+Jon Holmes
+This is my CSS for my resume, specifically.
+*/
+
+* {
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:2px;
+    margin-right:2px;
+    padding: 0px;
+}
+body#resume .navbar{
+    margin-top:20px;
+}
+ul {
+    display: -ms-flexbox; /* IE 10 */
+    display: -webkit-flex; /* Safari 6.1+. iOS 7.1+ */
+    display: flex;
+    -webkit-flex-flow: wrap column; /* Safari 6.1+ */
+    flex-flow: wrap column;
+    display: inline-block;
+    margin: 0px 10px 0px 45px;
+    padding:0.3%;
+}
+ul li {
+    display: inline-block;
+    display: list-item;
+    margin-right: 5%;
+    float:left;
+}
+h1{
+    text-shadow: 5px 4px 2px rgba(80, 80, 80, 0.5);
+    text-align: center;
+    width: 100%;
+    font-size:2em;
+    font-weight: bold;
+}
+p {
+    margin-bottom:0.5em;
+}
+#name a {
+    text-decoration: none;
+    color:#6a5acd;/* slateblue */
+}
+#resumecontact a {
+    text-decoration: none;
+    color: #445;
+    font-size: 1.4em;
+}
+#resumecontact p{
+    display:inline;
+    padding-right:0px;
+}
+#resumecontact {
+    margin:0em auto;
+    align-content:center;
+}
+#phonenumber:after {
+    color: #6a5acd;
+    content: "|";
+    font-style: normal;
+    font-size: 1.4em;
+    width: 3%;
+    padding-left: 1%;
+    padding-right: 0.5%;
+}
+.employment-date:before {
+    content:"|";
+    padding-right:0.9%;
+    padding-left:0.5%;
+    font-size:1.35em;
+}
+address {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    font-size: 1em;
+}
+#summary {
+    padding-left: 40px;
+}
+.title, .major {
+    padding-left: 20px;
+    font-size: 1.15em;
+}
+.company, .school {
+    font-size: 1.35em;
+}
+dd{
+    padding-left:40px;
+    font-size:1em;
+}
+hr {
+    border-color: #6a5acd;
+    background-color: #6a5acd;
+    color: #6a5acd;
+    margin-left: 2em;
+    margin-right: 2em;
+    height:0.01em;
+}
+h2{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+h3{
+    font-size: 1.35em;
+}
+h4{
+    font-size: 1.15em;
+    padding-left: 15px;
+}
+ul li {
+    list-style:none;
+}
+ul li:before { /* making backup bullet points for browsers that don't support the radial-gradient ones */
+    content: "\25c6";
+    font-weight: bold;
+    font-size: 1em;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-right: 0.3em;
+    color: #6a5acd;
+    content: radial-gradient(closest-side, #c1dcff, #6a5acd 99.99%, transparent);/* seems like this shouldnt even work, but ill take it. (works in chrome) */
+}
+article {
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+}
+

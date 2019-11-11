@@ -1,0 +1,100 @@
+<!-- - - - - - - - - - - - - - - - - - - - -
+Brandon Watkins
+September 6, 2019
+INFO 2220
+Jon Holmes
+Assignment 2
+Purpose: This is an HTML page made for the purpose of testing CSS on it.
+- - - - - - - - - - - - - - - - - - - - - - -->
+
+<!doctype html>
+<html>
+<head>
+    <title>My CSS Test Page</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora" />
+    <style type="text/css">
+
+        body {
+            background-image: url("images/background-ribbon.png");
+            background-color: #E5E5E5;
+            margin-left: 100px;
+        }
+
+        table {
+            border: solid 2px #777;
+        }
+
+        .testbody .navbar .drop-down-list-button {
+            position: absolute;
+            left: -100px;
+        }
+    </style>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/navbar.js"></script>
+</head>
+<body id="testbody">
+
+    <div class="success">
+        <p>consider this test-text for the "success" div.</p>
+    </div>
+
+    <div class="warning">
+        <p>consider this test-text for the "warning" div.</p>
+    </div>
+
+    <div class="error">
+        <p>consider this test-text for the "error" div.</p>
+    </div>
+
+    <h1>Winter is almost here!</h1>
+
+    <h2>Get out your coats.</h2>
+
+    <h3>...And spend the entire season studying, instead of playing.</h3>
+
+    <p>
+        Winter is fast-approaching. If you <span>snowboard or ski</span>, now is the time to buy your lift tickets.
+        Students frequently get <span class="special">reduced price tickets</span>, which are further reduced if you buy
+        them before winter. Targhee Ski Resort is expensive, but they offer plentiful and phenominal tree runs.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Most Liked</th>
+                <th scope="col">Least Liked</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Rock Band</th>
+                <td>Tool</td>
+                <td>Red Hot Chili Peppers</td>
+            </tr>
+            <tr class="other">
+                <th scope="row">Adventure Book</th>
+                <td>The Name of the Wind</td>
+                <td>The Lord of the Rings</td>
+            </tr>
+            <tr>
+                <th scope="row">Movie</th>
+                <td>Harry Potter (Any #)</td>
+                <td>Pee Wee's Big Adventure</td>
+            </tr>
+            <tr class="other">
+                <th scope="row">Sport</th>
+                <td>Snowboarding</td>
+                <td>Football</td>
+            </tr>
+            <tr>
+                <th scope="row">Soda</th>
+                <td>Mountain Dew Livewire</td>
+                <td>CocaCola</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

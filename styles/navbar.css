@@ -1,0 +1,126 @@
+﻿/*
+Brandon Watkins
+September 6, 2019
+INFO 2220
+Jon Holmes
+this is my CSS pertaining to my navigation menu
+*/
+
+/***************************************************************************************************
+    This section is purely dedicated to the navigation bar at the top of the website.
+    utilized https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp 
+    in the creation of my drop down menu.
+*/
+/* centers the h1 header, and pushes the rest of the content down below my navbar */
+
+h1:first-of-type{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin: 0px auto 0px auto;
+    width: 100%;
+    text-align: center;
+}
+
+div #pOne{
+    padding-top:75px;
+}
+
+/* repositioning nav bar due to required formatting for assignment */
+#testbody .navbar {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/* navigation bar at the top of my webpages. currently empty, and is just a placeholder, may expand */
+.navbar {
+    position: absolute;
+    overflow: hidden;
+    font-family: 'Lora', serif;
+    padding-top: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-left: 10px;
+    z-index: 1;
+}
+/* links inside the navbar, including the drop down menu */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    background-color: #ddd;
+    color: #005dff;
+    text-align: center;
+    text-decoration: none;
+}
+/* The drop-down container */
+.drop-down {
+    float: left;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* the button that activates the drop down menu */
+.drop-down .drop-down-list-button {
+    font-size: 16px;
+    height: 50px;
+    width: 200px;
+    border: solid;
+    border-width: 1px;
+    border-color: #005dff;
+    background-color: #ddd;
+    color: #005dff;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    z-index: 1;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .drop-down:hover .drop-down-list-button {
+    color: #B4D9FF;
+    background-color: #0077ff;
+    border-color: #0000ff;
+}
+
+/* the group of links inside the drop down menu */
+.drop-down-list-items {
+    display: none;
+    position: relative;
+    right: -25px;
+    top: -2px;
+    background-color: #ddd;
+    border-left: solid 2px #6269FF;
+    border-right: solid 2px #6269FF;
+    border-bottom: solid 2px #6269FF;
+    border-top: solid 1px #BDD5FC;
+    width: 150px;
+    z-index: 1;
+}
+
+/* controls the individual links inside the drop down menu */
+.drop-down-list-items a {
+    float: none;
+    color: #006FFC;
+    background-color: #BDD5FC;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    margin: 1px;
+}
+
+/* changes background color for the drop down menu's links on hover*/
+.drop-down-list-items a:hover {
+    background-color: #6269FF;
+}
+
+/* display the drop down menu on hover */
+.drop-down:hover .drop-down-list-items {
+    display: block;
+}
+
+/*
+    End navigation bar
+***************************************************************************************************/
+

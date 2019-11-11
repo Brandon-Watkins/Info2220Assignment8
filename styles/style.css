@@ -1,0 +1,155 @@
+@import "navbar.css";
+@import url("navbar.css");
+@import "csstest.css";
+@import url("csstest.css");
+
+/*
+Brandon Watkins
+September 6, 2019
+INFO 2220
+Jon Holmes
+This is my CSS for just about everything.
+*/
+
+#testbody {
+    margin-top:10px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    padding: 10px;
+    color: #000;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+#secMouser h1{/* just negating the navbar.css. I moved things over so they don't hide behind my menu */
+    text-align:left;
+    padding-bottom:0px;
+    padding-top:0px;
+}
+ p {
+    padding: 2ex;
+}
+ p span{
+    font-weight:bold;
+}
+ div p span{
+     font-weight:normal;
+ }
+table span{
+    text-decoration:underline;
+}
+ a {
+    color: #ff8800;
+}
+ h1 {
+    font-size: 2em;
+    color: #ff8800;
+}
+ h2 {
+    font-size: 1.8em;
+    color: #888888;
+}
+ h3 {
+    font-size: 1.6em;
+}
+th {
+    background-color: #ff8800;
+    color: #ffffff;
+}
+tr {
+    font-size: 0.9em;
+    background-color: #eeeeee;
+}
+tr.other {
+    background-color: #dddddd;
+}
+.success, .warning, .error {
+    border: solid 1px #aaaaaa;
+    font-weight: bold;
+    padding: 0.3em;
+    margin: 0.3em;
+}
+.success {
+    color: #008800;
+    background-color: #f0fff0;
+    border-color: #008800;
+}
+.warning {
+    color: #888800;
+    background-color: #fffff0;
+    border-color: #888800;
+}
+.error {
+    color: #880000;
+    background-color: #fff0f0;
+    border-color: #880000;
+}
+#testbody .success, #testbody .warning, #testbody .error{
+    margin-left:150px;
+}
+
+
+#assignmentsPage {
+    margin-left: 65px;
+    font-size: 100%;
+}
+#assignmentsPage h1, #assignmentsPage h2 {
+    font-weight: normal;
+}
+#assignments ul {
+    margin-left: 30px;
+}
+#assignmentsPage ul li {
+    padding-left: 50px;
+}
+#assignmentsPage h1 {
+    font-size: 2em;
+}
+#assignmentsPage h2 {
+    font-size:1.2em;
+}
+
+
+#ass1Form {
+    margin-left:10px;
+    margin-top:10px;
+}
+#ass1Form form{
+    padding-top:75px;
+    font-size:1em;
+    margin-left:2px;
+}
+#ass1Form form p label{
+    display: block;
+    padding:3px;
+    font-weight:bold;
+}
+#ass1Form form p input, #ass1Form form p select {
+    position: absolute;
+    left: 150px;
+    border-radius: 2px;
+}
+#ass1Form fieldset{
+    margin-left:138px;
+    margin-bottom:5px;
+    border-radius:2px;
+    width:auto;
+}
+#ass1Form textarea{
+    position:absolute;
+    left:150px;
+    border-radius:2px;
+}
+#ass1Form span#desc{
+    font-weight:bold;
+    position:relative;
+    top:50px;
+}
+#ass1Form #send{
+    display:block;
+    position:relative;
+    top:55px;
+}
+
+#jQ span{
+    background-color: #0ff;
+}
