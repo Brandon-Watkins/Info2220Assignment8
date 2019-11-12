@@ -11,19 +11,22 @@ this is my CSS pertaining to my navigation menu
     utilized https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp 
     in the creation of my drop down menu.
 */
-/* centers the h1 header, and pushes the rest of the content down below my navbar */
+/* centers the h1 header*/
 
-h1:first-of-type{
-    padding-top: 5px;
-    padding-bottom: 10px;
+h1:first-of-type {
     display: inline-block;
+    padding: 0px 30% 0px 30%;
     margin: 0px auto 0px auto;
-    width: 100%;
     text-align: center;
+    width:40%;
+}
+
+#books{
+    padding-top:50px;
 }
 
 div #pOne{
-    padding-top:75px;
+    padding-top:30px;
 }
 
 /* repositioning nav bar due to required formatting for assignment */
@@ -35,14 +38,16 @@ div #pOne{
 
 /* navigation bar at the top of my webpages. currently empty, and is just a placeholder, may expand */
 .navbar {
-    position: absolute;
+    position: relative;
     overflow: hidden;
     font-family: 'Lora', serif;
     padding-top: 10px;
     margin-top: 10px;
     padding-left: 10px;
     margin-left: 10px;
-    z-index: 1;
+    z-index: 1000;
+    padding-bottom:15px;
+    width:25%;
 }
 /* links inside the navbar, including the drop down menu */
 .navbar a {
@@ -57,7 +62,8 @@ div #pOne{
 .drop-down {
     float: left;
     overflow: hidden;
-    z-index: 1;
+    z-index: 1001;
+    position:fixed;
 }
 
 /* the button that activates the drop down menu */

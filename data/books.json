@@ -1,0 +1,152 @@
+/* Brandon Watkins
+*  11/11/2019
+*  List of books, within the table for Part 1, Assignment 8.
+*/
+{
+  "books": [
+    {
+      "title": "HTML and CSS: Design and Build Websites",
+      "ISBN": "978-1118008188",
+      "author": {
+        "authorFirstName": "Jon",
+        "authorMiddleName": null,
+        "authorLastName": "Duckett"
+      },
+      "tags": [
+        "CSS",
+        "Web",
+        "Design",
+        "Programming"
+      ]
+    },
+
+    {
+      "title": "Beginning Programming All-In-One Desk Reference For Dummies",
+      "ISBN": "978-0470108543",
+      "author": {
+        "authorFirstName": "Wallace",
+        "authorMiddleName": null,
+        "authorLastName": "Wang"
+      },
+      "tags": [
+        "Introductory",
+        "Beginning",
+        "Programming",
+        "Languages",
+        "Software"
+      ]
+    },
+
+    {
+      "title": "Beginning C++ Through Game Programming",
+      "ISBN": "978-1435457423",
+      "author": {
+        "authorFirstName": "Michael",
+        "authorMiddleName": null,
+        "authorLastName": "Dawson"
+      },
+      "tags": [
+        "Tutorials",
+        "C++",
+        "Game",
+        "Programming"
+      ]
+    },
+
+    {
+      "title": "Code: The Hidden Language of Computer Hardware and Software",
+      "ISBN": "735611319",
+      "author": {
+        "authorFirstName": "Charles",
+        "authorMiddleName": null,
+        "authorLastName": "Petzold"
+      },
+      "tags": [
+        "Machine Theory",
+        "Business",
+        "Software",
+        "Development"
+      ]
+    },
+
+    {
+      "title": "The Principles of Object-Oriented JavaScript",
+      "ISBN": "978-1593275402",
+      "author": {
+        "authorFirstName": "Nicholas",
+        "authorMiddleName": "C.",
+        "authorLastName": "Zakas"
+      },
+      "tags": [
+        "Object-Oriented",
+        "Software",
+        "Design",
+        "JavaScript"
+      ]
+    },
+
+    {
+      "title": "How Linux Works: What Every Superuser Should Know",
+      "ISBN": "978-1593275679",
+      "author": {
+        "authorFirstName": "Brian",
+        "authorMiddleName": null,
+        "authorLastName": "Ward"
+      },
+      "tags": [
+        "Linux",
+        "UNIX",
+        "Networking",
+        "System Administration",
+        "Operating Systems"
+      ]
+    },
+
+    {
+      "title": "The Psychology of Computer Programming: Silver Anniversary Edition",
+      "ISBN": "978-0932633422",
+      "author": {
+        "authorFirstName": "Gerald",
+        "authorMiddleName": "M.",
+        "authorLastName": "Weinberg"
+      },
+      "tags": [
+        "Programming",
+        "Languages",
+        "Mathematics"
+      ]
+    },
+
+    {
+      "title": "The mYthical Man-Month: Essays on Software Engineering",
+      "ISBN": "978-0201835953",
+      "author": {
+        "authorFirstName": "Frederick",
+        "authorMiddleName": "P.",
+        "authorLastName": "Brooks"
+      },
+      "tags": [
+        "MicroProcessors",
+        "Design",
+        "Software",
+        "Engineering",
+        "Development"
+      ]
+    },
+
+    {
+      "title": "Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers",
+      "ISBN": "978-1597499576",
+      "author": {
+        "authorFirstName": "TJ",
+        "authorMiddleName": null,
+        "authorLastName": "O'Connor"
+      },
+      "tags": [
+        "Hacking",
+        "Networking",
+        "Security"
+      ]
+    }
+  ]
+}
