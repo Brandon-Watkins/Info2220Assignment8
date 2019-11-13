@@ -1,21 +1,41 @@
-﻿var xhr = new XMLHttpRequest();
+﻿var textToFind = "Search for...";
 
-xhr.open("GET", "data/books.json", true);
-xhr.onload = getResults;
-
-var getResults = function () {
-    if (xhr.responseText) showResults(xhr.responseText.parse());
-}
-
-var showResults = function (jsObject) {
+var showResults = function (jsonData) {
     $.each("#books.temp").remove;
-    for (var i = 0; i < xhr.responseText.parse()) {
-        var temp = jsObject[i];// dont think this will work.
-        $("#books thead").append(temp);
+    var jqObject = JSON.parse(jsonData.responseText);
+    var tempTable;
+    for (var i = 0; i < jqObject.books.length; i++) {
+        var temp = jqObject.books[i];
+        if (temp.title.contains(textToFind) || temp.ISBN.contains(textToFind) ||
+            temp.author.contains(textToFind) || temp.tags.contains(textToFind)) {
+
+            var tempRow = "";
+            var name = temp.author.authorLastName + ",\r\n" + temp.author.authorFirstName;
+            if (temp.author.authorMiddleName != null) name += "\r\n" + temp.author.authorMiddleName;
+
+            var tags = "<ul>";
+            for (var j = 0; j < temp.tags.length; j++) {
+                tags += "<li>" + temp.tags[j] + "</li>";
+            }
+            tags += "</ul>";
+
+            tempRow += "<tr class id='temp'><td>" + temp.title + "</td>" +
+                "<td>" + temp.ISBN + "</td>" +
+                "<td>" + name + "</td>" +
+                "<td>" + tags + "</td>" +
+                "</tr";
+
+            tempTable += tempRow;
+        }
     }
+    if (tempTable != null && tempTable != undefined) $("#books thead").append(tempTable);
 }
 
-$("#btnSearch").on("click", function () {
-    var textToFind = $("txtSearch").text;
-    if (textToFind !== "Search for...") xhr.send(textToFind);
-})
+$("#txtSearch").on("blur", function () {
+    textToFind = $("#txtSearch").val();
+});
+
+$("#btnSearch").on("click", function (e) {
+    e.preventDefault();
+    $.getJSON("data/books.json", showResults(data));
+});
