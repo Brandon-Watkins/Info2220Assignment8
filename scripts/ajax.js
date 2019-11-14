@@ -1,6 +1,6 @@
 ﻿var textToFind = "Search for...";
 
-var showResults = function (jsonData) {
+function showResults (jsonData) {
     $.each("#books.temp").remove;
     var jqObject = JSON.parse(jsonData.responseText);
     var tempTable;
@@ -31,11 +31,11 @@ var showResults = function (jsonData) {
     if (tempTable != null && tempTable != undefined) $("#books thead").append(tempTable);
 }
 
-$("#txtSearch").on("blur", function () {
-    textToFind = $("#txtSearch").val();
-});
+$(document).ready(function () {
 
-$("#btnSearch").on("click", function (e) {
-    e.preventDefault();
-    $.getJSON("data/books.json", showResults(data));
+    $("#btnSearch").on("click", function (e) {
+        e.preventDefault();
+        textToFind = $("#txtSearch").val()
+        $.ajax({ url: "data/books.json", dataType: "JSON" }).done(function () { alert("Success"); }).fail(function () { alert("Failure"); });
+    });
 });
