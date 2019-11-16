@@ -1,7 +1,3 @@
-/* Brandon Watkins
-*  11/11/2019
-*  List of books, within the table for Part 1, Assignment 8.
-*/
 {
   "books": [
     {
@@ -118,7 +114,7 @@
     },
 
     {
-      "title": "The mYthical Man-Month: Essays on Software Engineering",
+      "title": "The Mythical Man-Month: Essays on Software Engineering",
       "ISBN": "978-0201835953",
       "author": {
         "authorFirstName": "Frederick",

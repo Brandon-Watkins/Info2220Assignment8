@@ -1,41 +1,92 @@
 ﻿var textToFind = "Search for...";
+var jsonData = null;
+var temp = null;
 
-function showResults (jsonData) {
-    $.each("#books.temp").remove;
-    var jqObject = JSON.parse(jsonData.responseText);
-    var tempTable;
-    for (var i = 0; i < jqObject.books.length; i++) {
-        var temp = jqObject.books[i];
-        if (temp.title.contains(textToFind) || temp.ISBN.contains(textToFind) ||
-            temp.author.contains(textToFind) || temp.tags.contains(textToFind)) {
+function searchResults() {
 
-            var tempRow = "";
-            var name = temp.author.authorLastName + ",\r\n" + temp.author.authorFirstName;
-            if (temp.author.authorMiddleName != null) name += "\r\n" + temp.author.authorMiddleName;
+    for (var i = 0; i < jsonData.books.length; i++) {
+        temp = jsonData.books[i];
+        if (// Search for books with partially matching title
+            temp.title.toLowerCase().includes(textToFind.toLowerCase()) ||
+            // Search for books with partially matching ISBN
+            temp.ISBN.includes(textToFind) ||
+            // Search for books with partially matching author name
+            temp.author.authorLastName.toLowerCase().includes(textToFind.toLowerCase()) ||
+            temp.author.authorMiddleName.toLowerCase().includes(textToFind.toLowerCase()) ||
+            temp.author.authorFirstName.toLowerCase().includes(textToFind.toLowerCase())) {
 
-            var tags = "<ul>";
-            for (var j = 0; j < temp.tags.length; j++) {
-                tags += "<li>" + temp.tags[j] + "</li>";
-            }
-            tags += "</ul>";
-
-            tempRow += "<tr class id='temp'><td>" + temp.title + "</td>" +
-                "<td>" + temp.ISBN + "</td>" +
-                "<td>" + name + "</td>" +
-                "<td>" + tags + "</td>" +
-                "</tr";
-
-            tempTable += tempRow;
+            // If a partial match was found, update the table
+            appendResults();
         }
+        // Check the books for partially matching tags
+        else {
+            found = false;
+            index = 0;
+            while (found === false && index < temp.tags.length) {
+                if (temp.tags[index].toLowerCase().includes(textToFind.toLowerCase())){
+                    found = true;
+                }
+                if (found) {
+                    appendResults();
+                }
+            }
+        }
+
     }
-    if (tempTable != null && tempTable != undefined) $("#books thead").append(tempTable);
+    jsonData = null;
+    temp = null;
 }
+
+var appendResults = function () {
+    var name = temp.author.authorLastName + ",\r\n" + temp.author.authorFirstName;
+    if (temp.author.authorMiddleName != null) {
+        name += "\r\n" + temp.author.authorMiddleName;
+    }
+
+    var tags = "<ul>";
+    for (var j = 0; j < temp.tags.length; j++) {
+        tags += "<li>" + temp.tags[j] + "</li>";
+    }
+    tags += "</ul>";
+
+    $("#books thead").append("<tr class id='temp'><td>" + temp.title + "</td>" +
+        "<td>" + temp.ISBN + "</td>" +
+        "<td>" + name + "</td>" +
+        "<td>" + tags + "</td>" +
+        "</tr>");
+}
+
+var clearTable = function () {
+    $.each($("#books .temp"), $("tr").remove());
+};
 
 $(document).ready(function () {
 
     $("#btnSearch").on("click", function (e) {
         e.preventDefault();
-        textToFind = $("#txtSearch").val()
-        $.ajax({ url: "data/books.json", dataType: "JSON" }).done(function () { alert("Success"); }).fail(function () { alert("Failure"); });
+        textToFind = $("#txtSearch").val();
+        tempTable = "";
+        $.ajax({
+            url: "data/books.json",
+            dataType: "JSON",
+            beforeSend: clearTable,
+            success: function (data) {
+                jsonData = data;
+                searchResults();
+            },
+            fail: function () {
+                alert("Failed to retrieve JSON file.");
+            }
+        });
     });
+
+    $("#txtSearch").on("focus", function () {
+        $("#txtSearch").val("");
+    })
+
+    $("#txtSearch").on("blur", function () {
+        if ($("#txtSearch").val() === "") {
+            $("#txtSearch").val("Search for...");
+        }
+    })
 });
