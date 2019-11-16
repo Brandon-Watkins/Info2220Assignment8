@@ -24,10 +24,8 @@ var searchResults = function () {
             index = 0;
             while (found === false && index < temp.tags.length) {
                 if (temp.tags[index].toLowerCase().includes(textToFind.toLowerCase())) {
+                    appendResults()
                     found = true;
-                }
-                if (found) {
-                    appendResults();
                 }
             }
         }
