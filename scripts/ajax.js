@@ -1,7 +1,12 @@
 ﻿var textToFind = "Search for...";
 var jsonData;
-var temp = null;
+var temp;
 
+/** for some reason, this function seems to be breaking once it finds a book that does not match
+ * the search results. For example, if you search for "978", as soon as it hits the 4th book in
+ * the JSON file, it stops. It should come up with 8 results. Also, it is currently not ever
+ * touching the "else" statement, so it isn't searching for tags.
+ */
 var searchResults = function () {
 
     for (var i = 0; i < jsonData.books.length; i++) {
@@ -27,6 +32,7 @@ var searchResults = function () {
                     appendResults()
                     found = true;
                 }
+                index++;
             }
         }
 
